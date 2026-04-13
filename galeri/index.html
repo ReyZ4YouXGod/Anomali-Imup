@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomali Imup | Media Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #fff5f8;
+            background-image: radial-gradient(#ffd6e5 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            color: #2d3748;
+        }
+
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid rgba(255, 182, 193, 0.5);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.1);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 18px;
+        }
+
+        /* Modal Preview */
+        #modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="py-20 px-4 flex justify-center">
+
+    <a href="dashboard" class="fixed top-6 left-6 z-[50] bg-white border-2 border-pink-100 p-3 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg active:scale-90 transition-all">
+        <i class="fa-solid fa-chevron-left text-pink-500"></i>
+    </a>
+
+    <div class="max-w-md w-full space-y-8">
+        
+        <div class="glass-card p-8 text-center bg-white">
+            <h1 class="text-2xl font-black italic tracking-tighter uppercase text-gray-800">Media <span class="text-pink-500">Vault</span></h1>
+            <p class="text-[9px] font-black text-pink-400 tracking-[0.3em] uppercase mt-2">Verified Collection Anomali Imup</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-center gap-2 px-2">
+                <i class="fa-solid fa-images text-pink-500 text-sm"></i>
+                <h2 class="text-[10px] font-black uppercase tracking-widest text-gray-400">Photos Gallery</h2>
+            </div>
+            
+            <div class="photo-grid">
+                <div class="glass-card flex flex-col" onclick="openModal('https://h.top4top.io/p_3712bn2t34.jpg', 'Mimin Ganteng Lagi Pantau')">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://g.top4top.io/p_3755tre5w3.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <p class="text-[9px] font-bold text-gray-600 truncate italic">Logo Grub Anomali Imup</p>
+                    </div>
+                </div>
+
+                <div class="glass-card flex flex-col" onclick="openModal('https://via.placeholder.com/400x600', 'Momen Member Nimbrung')">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 bg-white">
+                        <p class="text-[9px] font-bold text-gray-600 truncate italic">Momen Member Nimbrung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-center gap-2 px-2">
+                <i class="fa-solid fa-play text-pink-500 text-sm"></i>
+                <h2 class="text-[10px] font-black uppercase tracking-widest text-gray-400">Video Collection</h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="glass-card p-4">
+                    <div class="video-container overflow-hidden shadow-inner">
+                        <iframe class="w-full h-full" src="https://h.top4top.io/m_3755agxfz5.mp4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-4 flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-video text-pink-500 text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] font-black text-gray-800 uppercase italic">Collab</h4>
+                            <p class="text-[9px] font-medium text-gray-400 mt-0.5">Upload By Admin Anomali Imup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-4">
+                    <div class="video-container overflow-hidden shadow-inner">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-4 flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-bolt text-pink-500 text-[10px]"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] font-black text-gray-800 uppercase italic">Highlight War Member</h4>
+                            <p class="text-[9px] font-medium text-gray-400 mt-0.5">Archive System - Secure Folder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-[8px] text-center font-black text-gray-300 uppercase tracking-[0.5em] py-10">End of Media Vault</p>
+    </div>
+
+    <div id="modal" onclick="closeModal()">
+        <div class="w-full max-w-sm glass-card p-2 bg-white shadow-2xl">
+            <img id="modal-img" src="" class="w-full rounded-[22px]">
+            <div class="p-4 text-center">
+                <p id="modal-caption" class="text-[11px] font-black text-gray-800 italic"></p>
+            </div>
+        </div>
+        <p class="mt-6 text-[10px] font-black text-pink-500 uppercase tracking-widest">Tap to Close</p>
+    </div>
+
+    <script>
+        function openModal(src, caption) {
+            const modal = document.getElementById('modal');
+            const img = document.getElementById('modal-img');
+            const cap = document.getElementById('modal-caption');
+            img.src = src;
+            cap.innerText = caption;
+            modal.style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
